@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra lateral</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./components/css/estilo_barra_lateral.css">
+
+    <!-- iconos de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*transition*/
+    --tran-02:all 0.2s ease;
+    --tran-03:all 0.3s ease;
+    --tran-04:all 0.4s ease;
+    --tran-05:all 0.5s ease;
+}
+
+/* Texto de las opciones del sidebar */
+.sidebar .text{
+    font-size: 18px;
+    font-weight: 500;
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+    font-family: sans-serif;
+}
+
+/*Descripción de las opciones */
+.sidebar.close .text{
+    opacity: 0;
+}
+
+/*Logo*/
+.logo{
+    text-align: center;
+}
+
+/*Barra lateral*/
+.sidebar{
+    border-top-right-radius:10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    padding: 10px;
+    background-color:#454546 ;
+    transition:var(--tran-05);
+    z-index: 1;
+}
+
+/*Cuando este cerrado el sidebar*/
+.sidebar.close{
+    width: 80px;
+}
+
+/*Iconos del sidebar*/
+.sidebar .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+/*Iconos y color de texto del sidebar*/
+.sidebar .icons,
+.sidebar .text{
+    color: white;
+}
+
+/*Opciones principales del sidebar*/
+.menu{
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 5px;
+}
+
+/*Opción principal del sidebar*/
+.menu ul li{
+    height: 50px;
+    list-style: none;
+}
+
+/*Logo de la empresa*/
+.sidebar .logo img{
+    max-width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/*Caja del botón expandir */
+.box-toggle{
+    position:absolute;
+    right: -15px;
+    z-index: 2;
+    width: 47px;
+    top: 50%;
+}
+
+/*Botón expandir*/
+.toggle{  
+    transform:  rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: #F2A530;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--tran-03);
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/*Botón expandir cuando el sidebar está cerrado*/
+.sidebar.close .toggle{
+    transform: rotate(0);
+}
+
+/*Cambio del color del botón expandir*/
+.toggle:hover{
+    color: black;
+}
+
+/*Opciones del sidebar*/
+.sidebar a{ 
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px; 
+}
+
+.sidebar a:hover .icons,
+.sidebar a:hover .text{
+    color: gray;
+}
+
+
+/*=========================================================*/
+/*BREAKPOINT*/
+/*=========================================================*/
+/*TABLET*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /*Opciones principales del sidebar*/
+    .menu, .botton-content{
+        position: relative;
+        right: 12px;
+        margin-top: 0px;
+    }
+
+    /*Tamaño del sidebar cuando está cerrado*/
+    .sidebar.close{
+        width: 70px;
+    }
+
+    /*Iconos del sidebar y Texto del sidebar*/
+    .sidebar .icons, .sidebar .text{
+        font-size: 15px;
+    }
+
+    /*Logo de la página*/
+    .sidebar .logo img{
+        max-width: 50px;
+    }
+}
+
+/*CELULARES*/
+@media screen and (max-width: 480px){
+    /*Opciones principales del sidebar*/
+    .menu{
+        top: 0;
+    }
+
+    .botton-content{
+        margin-top: 5px;
+    }
+
+    .botton-content a{
+        margin-top: 9px;
+    }
+    
+    .sidebar{
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+        position: fixed;
+        bottom: 0;
+        width: 100% !important;
+        height: 80px;
+        padding: 15px 0px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    /*Logo de la empresa*/
+    .sidebar .logo{
+        display: none;
+    }
+
+    .menu-links{
+        display: flex;
+    }
+
+    .sidebar .text{
+        font-size:13px ;
+    }
+    
+    .toggle{
+        display: none;
+    }
+
+    .sidebar a{
+        flex-direction: column;
+        gap: 10%;
+        list-style: none;
+        margin-right: 10px;
+    }
+} 
+    </style>
+</head>
+<body>
+    
+    <nav class="sidebar close">
+
+        <!--Logo de la empresa-->
+        <div class="logo">
+            <img src="https://www.pngall.com/wp-content/uploads/9/Kingdom-Hearts-III-Logo-PNG.png"  alt="">
+        </div>
+
+        <!--Opciones-->
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link" id="link1"><a href="barra_lateral.html"><i class="bi bi-person icons"></i> <span class="text nav-text" id="text1">Perfil</span></a></li>
+                <li class="nav-link" id="link2"><a href="encuesta.html"><i class="bi bi-clipboard icons"></i> <span class="text nav-text" id="text2">Encuesta</span></a></li>
+                <li class="nav-link" id="link3"><a href="cuenta.html"><i class="bi bi-bar-chart-fill icons"></i> <span class="text nav-text" id="text3">Cuenta</span></a></li>
+            </ul>
+        </div>
+
+        <!--Cerrar Sesión-->
+        <div class="botton-content">
+            <a href=""><i class="bi bi-box-arrow-right icons"></i><span class="text nav-text" id="text4">Salir</span></a>
+        </div>
+
+        <!--Botón desplegar sidebar-->
+        <div class="box-toggle">
+            <i class="bi bi-caret-right toggle"></i>
+        </div>
+    </nav>
+
+    <script src="./components/js/barra.js"></script>
+</body>
+</html>

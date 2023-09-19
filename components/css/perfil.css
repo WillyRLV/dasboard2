@@ -16,9 +16,9 @@ main{
 }
 
 #contenido-principal > * {
-    padding: 10px;
+    padding: 5px;
 }
-
+/*
 #contenido-principal{
     display: grid;
     grid-template: 
@@ -26,8 +26,7 @@ main{
     "Info"  100px
     "Datos" auto/
     auto
-    /*un punto . indica que debe de estar vacia*/
-}
+}*/
 
 /*Contenido del título de la página*/
 .contenido-nombre{
@@ -85,6 +84,7 @@ main{
 .contenido-datos{
     background-color: #fff;
     grid-area: Datos;
+    margin-bottom: 80px;
 }
 
 /*Contenedor donde el usuario subirá o verá su foto de perfil*/
@@ -170,6 +170,7 @@ main{
 .contenedor-datosPerfil{
     background-color: #fff;
     margin-top: 28px; /*Cambiar distancia entre datos y foto*/
+    margin-bottom: 120px;
 }
 
 /*Icono del datos básicos*/
@@ -258,18 +259,20 @@ main{
     justify-content: center;
     align-items: center;
     margin-bottom: 45px;
- }
+}
 
+#profile-image{
+    cursor: default;
+}
 
 /*Medidas*/
 @media (min-width: 600px){
-    #contenido-principal{
+    /*#contenido-principal{
     display: grid;
 
     grid-template: 
     "Nombre Nombre" 50px
     "Datos Info" auto /
     auto   30%;
-    /*un punto . indica que debe de estar vacia*/
-    }  
+    }  */
 }
