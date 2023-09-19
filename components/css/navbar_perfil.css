@@ -10,9 +10,6 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-size: 1em; /*15px*/
-    font-style: normal;
 }
 
 .navbar {
@@ -22,10 +19,11 @@ body{
     align-items: center;
     padding: 5px 15px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 
 .logo img {
-    max-width: 80px; 
+    max-width: 70px; 
 }
 
 .yellow-button {
@@ -95,6 +93,7 @@ body{
     border-radius: 60px 0 0 0; 
     transition: right 0.3s ease-in-out;
     color: var(--sidebar-font-color);
+    z-index: 2;
 }
 
 
